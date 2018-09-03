@@ -1,6 +1,14 @@
 #include "Game.h"
 
+Game::Game(int _screenWidht, int _screenHeight, string _screenName) : GameBase(_screenWidht, _screenHeight,_screenName) // constructor de la clase padre
+{
+	loopCount = 0;
+}
 
+
+Game::~Game()
+{
+}
 
 bool Game::OnStart()
 {
@@ -11,25 +19,14 @@ bool Game::OnStart()
 bool Game::OnStop()
 {
 	cout << "Game::OnStop()" << endl;
-	return true;
+	return false;
 }
-
 bool Game::OnUpdate()
 {
-	cout << "Game::OnUpdate()" << endl;
-	contador++;
-	if (contador > 200)
-	{
+	loopCount++;
+	std::cout << "Loop" << loopCount << std::endl;
+	if (loopCount > 10000)
 		return false;
-	}
+
 	return true;
-}
-
-Game::Game()
-{
-}
-
-
-Game::~Game()
-{
 }

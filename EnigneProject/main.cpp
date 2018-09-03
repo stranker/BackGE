@@ -1,15 +1,17 @@
 #include "Game.h"
+#include <iostream>
 
-int main() {
-	Game* game = new Game();
+int main()
+{
+	Game* game = new Game(800,600,"Test");
+
 	if (game->Start())
 	{
-		game->Loop();
-	}
-	// TODO: startup
+		game->Loop();		
+	}		
 	game->Stop();
-	cin.get();
-	delete game;
-	
+	std::cin.get();
+	std::cin.get();
+	delete game;	
 	return 0;
 }

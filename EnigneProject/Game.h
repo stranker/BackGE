@@ -1,17 +1,16 @@
 #pragma once
-
-#include "GameBase.h"
-
+#include "../Clase1/GameBase.h"
+#include <iostream>
+using namespace std;
 class Game : public GameBase
 {
-private:
-	int contador = 0;
-protected:
+protected:		
 	bool OnStart() override;
 	bool OnStop() override;
 	bool OnUpdate() override;
+	int loopCount;
 public:
-	Game();
+	Game(int _screenHeight, int _screenWidht, string _screenName);
 	~Game();
 };
 
